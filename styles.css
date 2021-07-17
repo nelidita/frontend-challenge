@@ -4,6 +4,11 @@
     text-decoration: none;
     font-family: 'Montserrat', 'Roboto Thin';
 }
+.containerPrincipal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 nav{
     float: left;
     width: 100%;
@@ -32,19 +37,22 @@ ul li:hover{
     text-shadow: 2px 2px black;
 }
 .search{
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    -webkit-writing-mode: vertical-rl;
     float: right;
     position: absolute;
-    margin-left: 78%;
 }
 #search {
-    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 55px;
     text-align: center;
-    margin-top: 6px;
     margin-right: 6px;
 }
 #searchBox {
-    margin-top: 9px;
+    margin-top: 12px;
     float: right;
     margin-right: 6px;
     text-align:center;
@@ -52,6 +60,23 @@ ul li:hover{
     height: 25px;
     width: 200px;
 }
+#banner{
+    display: flex;
+    flex-wrap: wrap;
+}
 #banner img{
     width: 100%;
+    margin-top: 55px;
+}
+.divtextBanner{
+    margin-left: 15px;
+    font-size: 33px;
+    font-weight: bold;
+    margin-top: -220px;
+}
+.textbanner{
+    margin-top: 2px;
+}
+.textColor{
+    background-color: white;
 }

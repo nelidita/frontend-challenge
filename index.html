@@ -12,24 +12,32 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#Shop"></a>SHOP</li>
-            <li><a href="#Instagram"></a>INSTAGRAM</li>
-            <li><a href="#ClosetRoom"></a>CLOSET ROOM</li>
-            <li><a href="#Vendedoras"></a>VENDEDORAS</li>
-            <li><a href="#Blog"></a>BLOG</li>
-        </ul>
-        <div class="search">
-            <form action="/search" id="search">
-                <input id="searchBox" type="text" value="¿Qué estás buscando?" />
-            </form>
+    <section class="containerPrincipal">
+        <nav>
+            <ul>
+                <li><a href="#Shop"></a>SHOP</li>
+                <li><a href="#Instagram"></a>INSTAGRAM</li>
+                <li><a href="#ClosetRoom"></a>CLOSET ROOM</li>
+                <li><a href="#Vendedoras"></a>VENDEDORAS</li>
+                <li><a href="#Blog"></a>BLOG</li>
+            </ul>
+            <div class="search">
+                <form action="/search" id="search">
+                    <input id="searchBox" type="text" value="¿Qué estás buscando?" />
+                </form>
+            </div>
+        </nav>
+        <div id="banner">
+            <img src="./assets/bitmap-banner.png" alt="banner">
+            <div class="divtextBanner">
+                <p class="textbanner"><span class="textColor">TE REGALAMOS<br /></span></p>
+                <p class="textbanner"><span class="textColor">EN TU PRIMERA<br /></span></p>
+                <p class="textbanner"><span class="textColor">COMPRA</span></p>
+            </div>
         </div>
-    </nav>
-    <div id="banner">
-        <img src="./assets/bitmap-banner.png" alt="banner">
-    </div>
-    <div id="productos"></div>
+        <div id="products"></div>
+    </section>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
