@@ -72,11 +72,41 @@ ul li:hover{
     margin-left: 15px;
     font-size: 33px;
     font-weight: bold;
-    margin-top: -220px;
+    margin-top: -290px;
 }
 .textbanner{
     margin-top: 2px;
 }
 .textColor{
     background-color: white;
+}
+#products{
+    display: contents;
+    text-align-last: center;
+}
+.product{
+    margin: 30px;
+}
+.infoProduct{
+    text-align: -webkit-center;
+    margin: 5px;
+}
+.nameProduct{
+    font-weight:900;
+}
+.profile{
+    text-align: -webkit-center;
+    border-top: solid 3px;
+}
+.profile img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.product button{
+    width: 90px;
+    height: 30px;
+    background: black;
+    color: white;
+    font-weight: bold;
 }
