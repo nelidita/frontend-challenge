@@ -80,12 +80,33 @@ ul li:hover{
 .textColor{
     background-color: white;
 }
+.textStore{
+    margin: 10px;
+}
+.recienLlegado{
+    font-size: 55px;
+    font-family: 'Montserrat';
+    color: rgb(202, 118, 160);
+    font-weight:700;
+}
+.recienLlegado span{
+    color: black;
+    font-weight: 500;
+}
+.loUltimo{
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+#divListProducts{
+    text-align: center;
+}
 #products{
-    display: contents;
     text-align-last: center;
 }
 .product{
     margin: 30px;
+    display: inline-block;
 }
 .infoProduct{
     text-align: -webkit-center;
@@ -103,10 +124,12 @@ ul li:hover{
     border-radius: 50%;
     margin: 10px;
 }
-.product button{
-    width: 90px;
-    height: 30px;
+.btnComprar{
+    width: 95px;
+    height: 35px;
     background: black;
     color: white;
     font-weight: bold;
+    border-radius: 5px;
+    font-size: 18px;
 }
