@@ -2,18 +2,18 @@ const viewProduct = (product) => {
     const divProduct = `
     <div class="product" id="containerProduct-${product.id}">
         <div class="imgProduct">
-            <img src="./assets/p4.png" atl="Imagen Producto">
-            </div>
-            <div class="infoProduct">
-                <p class="nameProduct">${product.name}</p>
-                <p>${product.price}</p>
-                <p>Cantidad: ${product.quantity}</p>
-            </div>
-            <div class="profile">
-                <img src="./assets/profile.png" alt="profile" />
-            </div>
-            <button class="btnComprar" data-id="${product.id}">Comprar</button>
+            <img class="img" src="./assets/p4.png" atl="Imagen Producto">
         </div>
+        <div class="infoProduct">
+            <p class="nameProduct">${product.name}</p>
+            <p class="price">${product.price}</p>
+            <p>Cantidad: ${product.quantity}</p>
+        </div>
+        <div class="profile">
+            <img src="./assets/profile.png" alt="profile" />
+        </div>
+        <button class="btnAdd" data-id="${product.id}">Agregar</button>
+    </div>
         `
     return divProduct;
 }
@@ -49,14 +49,14 @@ export const store = () => {
     return containerStore;
 }
 
-// export const buy = () => {
-//     const containerBuy = document.createElement('div');
-//     containerBuy.className = 'containerBuy'
-//     const contenidoBuy = `
+// export const car = () => {
+//     const containerCar = document.createElement('div');
+//     containerCar.className = 'containerCar'
+//     const contenidoCar = `
 //         <div>
         
 //         </div>
 //         `
-//     containerBuy.innerHTML = contenidoBuy;
-//     return containerBuy;
+//     containerCar.innerHTML = contenidoCar;
+//     return containerCar;
 // }

@@ -8,22 +8,50 @@ const dataProducts = () => {
             document.getElementById("products").appendChild(store())//Agrego todos los productos.
             document.getElementById("divListProducts").innerHTML = viewListProducts(listProducts) //Agrego el contenido de cada producto
             
-            const btnsComprar = document.querySelectorAll('.btnComprar');
-            btnsComprar.forEach((btn) => btn.addEventListener('click', (event) => {
-            console.log(btn)
-            }))
-
-
+            
+            const btnsAdd = document.querySelectorAll('.btnAdd');
+            document.getElementById("car").appendChild(addProduct(btnsAdd));
+           
         })
         .catch(error => console.log(error))
 };
 dataProducts();
 
-// const btnsComprar = () => {
+const addProduct = (btnsComprar) => {
+    let divListAddProducts = '';
+    btnsComprar.forEach( btn => btn.addEventListener('click', (event) => {
+        const button = event.target
+        const product = button.closest (".product")
+        const img = product.querySelector(".img").src
+        const name = product.querySelector(".nameProduct").textContent
+        const price = product.querySelector(".price").textContent
+        
+        divListAddProducts += car(img,name,price)
+        /*car(img,name,price)*/
 
-    // const btnsComprar = document.querySelectorAll('.btnComprar');
-   
-    // btnsComprar.forEach((btn) => btn.addEventListener('click', (event) => {
-    // console.log(btn)
-    // }))
-// }
+    }))
+    return divListAddProducts
+}
+
+const car = (img,name,price) => {
+    const containerCar = document.createElement('div');  
+    containerCar.className = 'containerCar'
+    const contenidoCar = `
+        <div id="rowCar">
+            <div class="divImgCar">
+                <img class="imgCar" src= ${img} atl="Imagen Producto">
+            </div>
+            <div class="divNameCar">
+                <p class="nameCar">${name}</p>
+            </div>
+            <div class="divPriceCar">
+                <p class="priceCar">${price}</p>
+            </div>
+            <div class="btnEliminar">
+                <img src="./assets/delete.png" alt= "Eliminar"/>
+            </div>
+        </div>
+        `
+    containerCar.innerHTML = contenidoCar;
+    return containerCar;
+}
