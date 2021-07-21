@@ -14,7 +14,7 @@ const viewProduct = (product) => {
         </div>
         <button class="btnAdd" data-id="${product.id}">Agregar</button>
     </div>
-        `
+    `
     return divProduct;
 }
 
@@ -23,7 +23,6 @@ export const viewListProducts = (listProducts) => {
     listProducts.forEach(product => {
         divListProducts += viewProduct(product);
     });
-
     return divListProducts;
 };
 
@@ -44,19 +43,7 @@ export const store = () => {
             <p class= "loUltimo">Lo último de nuestra tienda</p>
         </div>
         <div id="divListProducts"</div>
-        `
+    `
     containerStore.innerHTML = contenidoStore
     return containerStore;
 }
-
-// export const car = () => {
-//     const containerCar = document.createElement('div');
-//     containerCar.className = 'containerCar'
-//     const contenidoCar = `
-//         <div>
-        
-//         </div>
-//         `
-//     containerCar.innerHTML = contenidoCar;
-//     return containerCar;
-// }
