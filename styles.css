@@ -12,6 +12,7 @@
 nav{
     float: left;
     width: 100%;
+    position: fixed;
 }
 ul{
     list-style: none;
@@ -59,6 +60,17 @@ ul li:hover{
     border-radius: 10px;
     height: 25px;
     width: 200px;
+}
+.imgShoppingCar{
+    position: fixed;
+    width: 100%;
+    text-align: end;
+    margin-top: 60px;
+    margin-right: 15px;
+}
+.imgShoppingCar img{
+    height: 70px;
+    cursor: pointer;
 }
 #banner{
     display: flex;
@@ -136,6 +148,7 @@ ul li:hover{
 .containerCar{
     width: 80%;
     text-align: -webkit-center;
+    margin-top: 200px;
 }
 #rowCar{
     display: inline-flex;
@@ -190,4 +203,15 @@ ul li:hover{
     height: 50px;
     text-align-last: center;
     margin-top: 25px;
+}
+#volverTienda{
+    font-size: 24px;
+    font-weight: 700;
+    height: 50px;
+    margin-top: 50px;
+    width: 250px;
+    background: rgb(224 150 187);
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    box-shadow: 2px 2px;
 }

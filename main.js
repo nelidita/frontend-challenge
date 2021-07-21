@@ -1,5 +1,13 @@
 import { viewListProducts, store} from './views.js'
 
+const storeProducts = () => {
+    window.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("containerCar").style.display = "none"
+        document.getElementById("products").style.display = "block"
+    })
+}
+storeProducts();
+
 const addProduct = btnsAdd => {    
     btnsAdd.forEach (btn => btn.addEventListener('click', (event) => {
         const button = event.target
@@ -14,7 +22,6 @@ const addProduct = btnsAdd => {
 
 const car = (img,name,price) => {
     const containerCar = document.createElement('div');  
-    containerCar.className = 'containerCar'
     const contenidoCar = `
         <div id="rowCar" class="rowCar">
             <div class="divImgCar">
@@ -38,6 +45,10 @@ const car = (img,name,price) => {
     const divCar = document.getElementById("car")
     divCar.appendChild(containerCar)
 
+    document.querySelectorAll(".btnEliminar").forEach(btn => {
+        btn.addEventListener("click", deleteProduct)
+    })
+    
     totalPrice();
 };
 
@@ -47,17 +58,33 @@ const totalPrice = () => {
 
     productsCar.forEach( productCar => {
         const textPrice = productCar.querySelector(".priceCar").textContent
-        const numberPrice = textPrice.replace("$", "")
+        const numberPrice = Number(textPrice.replace(/[$,]/g,''))
         const quantityProducts = Number(productCar.querySelector(".quantity").value)
-        console.log(numberPrice)
+        totalPriceProducts = totalPriceProducts + numberPrice * quantityProducts
     })
 
     const pPriceTotal = document.getElementById ("priceTotal")
-    pPriceTotal.innerHTML = ("$ " + totalPriceProducts);
-    https://www.youtube.com/watch?v=dSbWJAXQ7cA
+    pPriceTotal.innerHTML = ("$ " + totalPriceProducts);  
 }
 
-const dataProducts = (addProductClick) => {
+const shoppingCar = () => {
+    document.getElementById("imgShoppingCar").addEventListener("click", () => {
+        document.getElementById("containerCar").style.display = "block"
+        document.getElementById("products").style.display = "none"
+    })
+
+    document.getElementById("volverTienda").addEventListener("click",() => {
+        document.getElementById("containerCar").style.display = "none"
+        document.getElementById("products").style.display = "block"
+    })
+}
+
+const deleteProduct = (event) => {
+    const elementSelect = event.target
+    elementSelect.closest(".rowCar").remove()
+}
+
+const dataProducts = () => {
     return fetch("./data/products.json")
         .then(response => response.json()) //Indico en que formato queremos ver nuestra data
         .then(response => {
@@ -66,7 +93,8 @@ const dataProducts = (addProductClick) => {
             document.getElementById("divListProducts").innerHTML = viewListProducts(listProducts) //Agrego el contenido de cada producto
             
             const btnsAdd = document.querySelectorAll('.btnAdd');
-            addProduct(btnsAdd)       
+            addProduct(btnsAdd)
+            shoppingCar()      
         })
         .catch(error => console.log(error))
 };
